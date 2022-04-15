@@ -8,6 +8,7 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/order');
 
 mongoose.connect('mongodb+srv://node-shop:'+ process.env.MONGO_ATLAS_PW +'@node-rest-shop.azzcu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:false}));
